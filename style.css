@@ -19,3 +19,7 @@ nav ul li a {
     display: block;
     text-decoration: none;
 }
+
+#imgPersoon1, #imgPersoon2{
+    width: 200px;
+}
