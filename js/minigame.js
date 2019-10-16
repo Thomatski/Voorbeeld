@@ -52,3 +52,39 @@ window.onload = function() {
         selector2.appendChild(optiePersoon);
     }
 }
+
+//eventlistener voor het veranderen van een element
+selector1.addEventListener("change", function(){
+    //this verwijst naar selector1
+    changeImage(this.value, 1);
+});
+
+selector2.addEventListener("change", function(){
+    //this verwijst naar selector2
+    changeImage(this.value, 2);
+});
+
+function changeImage (naam, selector){
+    for(var i = 0; i < personen.length; i++){
+        //this verwijst naar selector 1 in dit geval
+        if(naam === personen[i].naam){
+            imgPersoon1.src = personen[i].image;
+            imgPersoon1.value = personen[i].naam;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
