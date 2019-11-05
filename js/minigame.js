@@ -13,8 +13,15 @@ var persoon2 = {
     aanval: 5,
     image: "../img/mario.png" 
 }
+var persoon3 = {
+    naam: "John Wick",
+    levens: 9,
+    snelheid: 8,
+    aanval: 2,
+    image: "../img/johnwick.png"
+}
 //objecten in een lijst zetten (geen aanhalingstekens omdat het objecten zijn)
-var personen = [persoon1, persoon2];
+var personen = [persoon1, persoon2, persoon3];
     
 var imgPersoon1 = document.getElementById("imgPersoon1");
 var imgPersoon2 = document.getElementById("imgPersoon2");
@@ -22,10 +29,15 @@ var imgPersoon2 = document.getElementById("imgPersoon2");
 var selector1 = document.getElementById("selector1");
 var selector2 = document.getElementById("selector2");
 
+var levens1 = document.getElementById("levens1");
+var levens2 = document.getElementById("levens2");
+
 imgPersoon1.src = persoon1.image;
 imgPersoon2.src = persoon2.image;
 imgPersoon1.value = persoon1.naam;
 imgPersoon2.value = persoon2.naam;
+levens1.innerHTML = persoon1.levens;
+levens2.innerHTML = persoon2.levens;
 
 window.onload = function() {
     //het doorlopen van elk element van ee lijst
@@ -68,8 +80,16 @@ function changeImage (naam, selector){
     for(var i = 0; i < personen.length; i++){
         //this verwijst naar selector 1 in dit geval
         if(naam === personen[i].naam){
-            imgPersoon1.src = personen[i].image;
-            imgPersoon1.value = personen[i].naam;
+            if(selector === 1){
+                imgPersoon1.src = personen[i].image;
+                imgPersoon1.value = personen[i].naam;
+                levens1.innerHTML = personen[i].levens;
+            }
+            else{
+                imgPersoon2.src = personen[i].image;
+                imgPersoon2.value = personen[i].naam;
+                levens2.innerHTML = personen[i].levens;
+            }
         }
     }
 }

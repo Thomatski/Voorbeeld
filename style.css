@@ -23,3 +23,15 @@ nav ul li a {
 #imgPersoon1, #imgPersoon2{
     width: 200px;
 }
+.grid-x {
+    border: 1px solid black;
+}
+h1{
+    text-align: center;
+}
+.cell {
+    border: 1px solid black;
+}
+.tekst {
+    margin: 0 5px;
+}
